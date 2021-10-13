@@ -8,7 +8,8 @@
     
     <Window v-if="data[0].isVisible" :data="data[0]" class="window"/>
     <Window v-if="data[1].isVisible" :data="data[1]" class="window"/>
-    <Window v-if="data[2].isVisible" :data="data[2]" class="window"/>
+    <Window v-if="data[2].isVisible" :data="data[2]" class="window terminal"/>
+    <Window v-if="data[3].isVisible" :data="data[3]" class="window"/>
   </main>
 </template>
 
@@ -64,6 +65,10 @@ export default {
       transform: translate(-50%, -50%);
       width: 90%;
       height: 90%;
+    }
+    .terminal {
+      width: 40%;
+      height: 40%;
     }
   }
 </style>
