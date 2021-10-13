@@ -114,7 +114,7 @@
                       <small class="text-muted">5 mins</small>
                     </div>
                     <small class="text-muted mb-1">
-                      Je retiens ton amis en otage, ahahahahahah!!!!!!
+                      Je retiens ton ami en otage, ahahahahahah!!!!!!
                     </small>
                   </div>
                 </div>
@@ -356,7 +356,7 @@
           <div class="text-center">
             <div class="card-body">
               <h5 class="card-title">
-                Je retiens ton amis en otage, ahahahahahah!!!!!!
+                Je retiens ton ami en otage, ahahahahahah!!!!!!
               </h5>
               <p class="card-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
