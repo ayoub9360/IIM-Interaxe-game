@@ -26,7 +26,12 @@ export default {
   methods: {
     checkPassword() {
       if (this.password === 'murder') {
-        // Faire quelque chose
+        const data = {
+          page: 'accueil',
+          lastPage: this.data.page,
+        }
+        const params = { id: this.data.id, newItem: data }
+        this.$store.commit('setContent', params)
       } else {
         this.error = 'Mot de passe incorect !'
       }

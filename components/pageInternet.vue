@@ -27,6 +27,8 @@
     <WebsiteHome v-if="data.page === 'home'" :data="data" />
     <WebsiteLogin v-if="data.page === 'login'" :data="data" />
     <WebsiteGoogle v-if="data.page === 'google.com'" :data="data" />
+    <WebsiteText v-if="data.page === 'accueil'" :data="data" />
+    <WebsiteMap v-if="data.page === 'map'" :data="data" />
   </div>
 </template>
 
@@ -58,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-  height: 100%;
+  height: calc(100% - 20px);
   width: 100%;
   border-radius: 0 0 8px 8px;
   display: flex;

@@ -60,6 +60,23 @@ export default {
           response = "Utilisateur inconnu, veuillez réessayer."
         }
       } 
+      else if (this.command.toLowerCase().includes('map')) {
+        if (this.command.toLowerCase().includes("bistro")) {
+          response = "Ouverture de la map, veuillez patientez..."
+          // setTimeout(function (){
+            
+          // }, 2000)
+          const data = {
+              isOpen: true,
+              isVisible: true,
+              page: 'map'
+            }
+            const params = { id: 'internet', newItem: data }
+            this.$store.commit('setContent', params)
+        } else {
+          response = "Adresse inconnue, veuillez réessayer."
+        }
+      } 
       else if (this.command.toLowerCase() === 'clear') {
         this.terminal.length = 0
       }

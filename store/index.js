@@ -11,8 +11,8 @@ export const state = () => ({
       isVisible: false,
       isOpen: false,
       logo: 'https://purepng.com/public/uploads/large/purepng.com-safari-iconsymbolsiconsapple-iosiosios-8-iconsios-8-7215225961106timx.png',
-      page: 'google.com',
-      lastPage: 'home',
+      page: 'map',
+      lastPage: 'google.com',
     },
     {
       id: 'terminal',
