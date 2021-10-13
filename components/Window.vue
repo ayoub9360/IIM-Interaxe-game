@@ -6,7 +6,9 @@
         <div class="size"></div>
         <div class="close" @click="closeWindow"></div>
       </div>
-      <h1>{{ data.id }}</h1>
+      <PageEmail v-if="data.id === 'email'" :data="data"/>
+      <PageInternet v-if="data.id === 'internet'" :data="data"/>
+      <PageTerminal v-if="data.id === 'terminal'" :data="data"/>
     </div>
   </main>
 </template>
