@@ -28,17 +28,32 @@ export const state = () => ({
       note: "Je n'ai toujours pas retrouver Damien... Je dois commencer à mener l'enquete ! \nje vais noter toutes mes trouvailles ici !",
     },
   ],
+  clue: [
+    {
+      id: 'image',
+      isVisible: false,
+      isFound: false,
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mail_%28iOS%29.svg/602px-Mail_%28iOS%29.svg.png',
+    },
+  ],
 })
 
 export const getters = {
   getContent(state) {
     return state.content
   },
+  getClue(state) {
+    return state.clue
+  },
 }
 
 export const mutations = {
   setContent(state, { id, newItem }) {
     const item = state.content.find((item) => item.id === id)
+    Object.assign(item, newItem)
+  },
+  setClue(state, { id, newItem }) {
+    const item = state.clue.find((item) => item.id === id)
     Object.assign(item, newItem)
   },
 }

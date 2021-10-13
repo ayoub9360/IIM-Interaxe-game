@@ -2,7 +2,7 @@
   <main>
     <div class="icon-list">
       <div v-for="(item, index) in data" :key="item.id" class="icon" :class="`icon-${index}`" @click="openWindow(item.id)">
-        <img :src="item.logo" :alt="item.id">
+        <img v-if="item.hide != true" :src="item.logo" :alt="item.id">
       </div>
     </div>
     
@@ -10,6 +10,8 @@
     <Window v-if="data[1].isVisible" :data="data[1]" class="window"/>
     <Window v-if="data[2].isVisible" :data="data[2]" class="window terminal"/>
     <Window v-if="data[3].isVisible" :data="data[3]" class="window"/>
+
+    <Window v-if="clue[0].isVisible" :data="clue[0]" class="window image"/>
   </main>
 </template>
 
@@ -18,6 +20,9 @@ export default {
   computed: {
     data() {
       return this.$store.getters.getContent
+    },
+    clue() {
+      return this.$store.getters.getClue
     }
   },
   methods: {
@@ -67,8 +72,16 @@ export default {
       height: 90%;
     }
     .terminal {
+      top: 55%;
+      left: 60%;
       width: 40%;
       height: 40%;
+    }
+    .image {
+      top: 50%;
+      left: 20%;
+      width: max-content;
+      height: 80%;
     }
   }
 </style>

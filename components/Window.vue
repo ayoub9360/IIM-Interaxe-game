@@ -11,6 +11,8 @@
       <PageInternet v-if="data.id === 'internet'" :data="data"/>
       <PageTerminal v-if="data.id === 'terminal'" :data="data"/>
       <PageNote v-if="data.id === 'note'" :data="data"/>
+      
+      <ClueImage v-if="data.id === 'image'" :data="data"/>
     </div>
   </main>
 </template>
@@ -18,6 +20,11 @@
 <script>
 export default {
   props: ['data'],
+  data() {
+    return {
+      app: ['email', 'internet', 'terminal', 'note']
+    }
+  },
   methods: {
     closeWindow() {
       const data = {
@@ -25,7 +32,11 @@ export default {
         isVisible: false,
       }
       const params = { id: this.data.id, newItem: data }
-      this.$store.commit('setContent', params)
+      if (this.app.includes(this.data.id)) {
+        this.$store.commit('setContent', params)
+      }else {
+        this.$store.commit('setClue', params)
+      }
     },
     hideWindow() {
       const data = {
@@ -33,7 +44,11 @@ export default {
         isVisible: false,
       }
       const params = { id: this.data.id, newItem: data }
-      this.$store.commit('setContent', params)
+      if (this.app.includes(this.data.id)) {
+        this.$store.commit('setContent', params)
+      }else {
+        this.$store.commit('setClue', params)
+      }
     },
   },
 }

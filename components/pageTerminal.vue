@@ -39,6 +39,11 @@ export default {
       let response
       if (this.command === 'unblur image') {
         response = "L'image a bien été corigé !"
+        const data = {
+          isVisible: true,
+        }
+        const params = { id: 'image', newItem: data }
+        this.$store.commit('setClue', params)
       } else if (this.command === 'clear') {
         this.terminal.length = 0
       }else {
