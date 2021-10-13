@@ -3,23 +3,57 @@
     <div class="nav">
       <div class="container">
         <div class="button">
-          <p>←</p>
+          <p @click="navigate(data.lastPage)">←</p>
           <p>→</p>
-          <img src="https://www.freepnglogos.com/uploads/logo-home-png/chimney-home-icon-transparent-1.png" alt="Home">
+          <img src="https://www.freepnglogos.com/uploads/logo-home-png/chimney-home-icon-transparent-1.png" alt="Home" @click="navigate('home')">
         </div>
         <div class="url">
-          <p>google.com</p>
+          <p v-if="data.page === 'home'" class="homeText">{{ data.page }}</p>
+          <p v-else>{{ data.page }}</p>
         </div>
         <img src="https://icones.pro/wp-content/uploads/2021/03/icone-de-configuration-noire.png" alt="Home" class="setting">
       </div>
     </div>
-    <iframe width="100%" height="100%" src="https://www.google.com/webhp?igu=1"></iframe>
+
+    <div v-if="data.page === 'home'" class="home">
+      <div class="home-item" @click="navigate('google.com')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <p>Google</p>
+      </div>
+      <div class="home-item" @click="navigate('google.com')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <p>Google</p>
+      </div>
+      <div class="home-item" @click="navigate('google.com')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <p>Google</p>
+      </div>
+      <div class="home-item" @click="navigate('google.com')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <p>Google</p>
+      </div>
+      <div class="home-item" @click="navigate('google.com')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <p>Google</p>
+      </div>
+    </div>
+    <iframe v-if="data.page === 'google.com'" width="100%" height="100%" src="https://www.google.com/webhp?igu=1"></iframe>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['data']
+  props: ['data'],
+  methods: {
+    navigate(destination){
+      const data = {
+        page: destination,
+        lastPage: this.data.page,
+      }
+      const params = { id: this.data.id, newItem: data };
+      this.$store.commit('setContent', params);
+    },
+  },
 }
 </script>
 
@@ -51,9 +85,13 @@ export default {
         border-radius: 50%;
         padding: 5px;
         margin-right: 10px;
+        &:first-child{
+          cursor: pointer;
+        }
       }
       img {
         height: 17px;
+        cursor: pointer;
       }
     }
     .url {
@@ -61,12 +99,39 @@ export default {
       padding: 5px 10px;
       width: 500px;
       border-radius: 8px;
+      .homeText {
+        text-transform: capitalize;
+      }
     }
     .setting {
       height: 30px;
       margin-left: auto;
+      cursor: pointer;
     }
   }
+
+  .home {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    &-item {
+      img {
+        height: 40px;
+        padding: 20px;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        cursor: pointer;
+      } 
+      margin: 0 10px;
+      p {
+        margin-top: 4px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+
   iframe {
     flex-grow: 1; 
     border: none; 

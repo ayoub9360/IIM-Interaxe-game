@@ -11,6 +11,8 @@ export const state = () => ({
       isVisible: false,
       isOpen: false,
       logo: 'https://cdn.icon-icons.com/icons2/2552/PNG/512/safari_browser_logo_icon_152965.png',
+      page: 'google.com',
+      lastPage: 'home',
     },
     {
       id: 'terminal',
