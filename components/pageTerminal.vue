@@ -37,18 +37,36 @@ export default {
     },
     runCommand() {
       let response
-      if (this.command === 'unblur image') {
+
+      if (this.command.toLowerCase() === 'unblur image') {
         response = "L'image a bien été corigé !"
         const data = {
           isVisible: true,
         }
         const params = { id: 'image', newItem: data }
         this.$store.commit('setClue', params)
-      } else if (this.command === 'clear') {
+      } 
+      else if (this.command.toLowerCase().includes('login')) {
+        if (this.command.toLowerCase().includes('login blood')) {
+          response = "Connexion à l'utilisateur blood en cours..."
+          const data = {
+            isOpen: true,
+            isVisible: true,
+            page: 'login'
+          }
+          const params = { id: 'internet', newItem: data }
+          this.$store.commit('setContent', params)
+        } else {
+          response = "Utilisateur inconnu, veuillez réessayer."
+        }
+      } 
+      else if (this.command.toLowerCase() === 'clear') {
         this.terminal.length = 0
-      }else {
-        response = "Cette commande est inconnue..."
       }
+      else {
+        response = "Cette commande est inconnue."
+      }
+
       const params = {
         command: this.command,
         response

@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <!-- Navigation -->
     <div class="nav">
       <div class="container">
         <div class="button">
@@ -23,49 +24,9 @@
       </div>
     </div>
 
-    <div v-if="data.page === 'home'" class="home">
-      <div class="home-item" @click="navigate('google.com')">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-          alt="Google"
-        />
-        <p>Google</p>
-      </div>
-      <div class="home-item" @click="navigate('google.com')">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-          alt="Google"
-        />
-        <p>Admin</p>
-      </div>
-      <div class="home-item" @click="navigate('google.com')">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-          alt="Google"
-        />
-        <p>Journal</p>
-      </div>
-      <div class="home-item" @click="navigate('google.com')">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-          alt="Google"
-        />
-        <p>Google</p>
-      </div>
-      <div class="home-item" @click="navigate('google.com')">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-          alt="Google"
-        />
-        <p>Google</p>
-      </div>
-    </div>
-    <iframe
-      v-if="data.page === 'google.com'"
-      width="100%"
-      height="100%"
-      src="https://www.google.com/webhp?igu=1"
-    ></iframe>
+    <WebsiteHome v-if="data.page === 'home'" :data="data" />
+    <WebsiteLogin v-if="data.page === 'login'" :data="data" />
+    <WebsiteGoogle v-if="data.page === 'google.com'" :data="data" />
   </div>
 </template>
 
@@ -95,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main {
   height: 100%;
   width: 100%;
@@ -162,36 +123,6 @@ export default {
       margin-left: auto;
       cursor: pointer;
     }
-  }
-
-  .home {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &-item {
-      img {
-        height: 40px;
-        padding: 20px;
-        border-radius: 50%;
-        background: rgb(255, 255, 255);
-        cursor: pointer;
-      }
-      margin: 0 10px;
-      p {
-        margin-top: 4px;
-        text-align: center;
-        cursor: pointer;
-      }
-    }
-  }
-
-  iframe {
-    flex-grow: 1;
-    border: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 0 0 8px 8px;
   }
 }
 

@@ -10,7 +10,7 @@ export const state = () => ({
       id: 'internet',
       isVisible: false,
       isOpen: false,
-      logo: 'https://cdn.icon-icons.com/icons2/2552/PNG/512/safari_browser_logo_icon_152965.png',
+      logo: 'https://purepng.com/public/uploads/large/purepng.com-safari-iconsymbolsiconsapple-iosiosios-8-iconsios-8-7215225961106timx.png',
       page: 'google.com',
       lastPage: 'home',
     },

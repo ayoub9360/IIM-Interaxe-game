@@ -73,7 +73,7 @@ export default {
     }
     .terminal {
       top: 55%;
-      left: 60%;
+      left: 70%;
       width: 40%;
       height: 40%;
     }
