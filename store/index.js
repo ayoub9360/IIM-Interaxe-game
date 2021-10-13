@@ -12,6 +12,12 @@ export const state = () => ({
       isOpen: false,
       logo: 'https://cdn.icon-icons.com/icons2/2552/PNG/512/safari_browser_logo_icon_152965.png',
     },
+    {
+      id: 'cmd',
+      isVisible: false,
+      isOpen: false,
+      logo: 'https://icon-library.com/images/command-prompt-icon/command-prompt-icon-11.jpg',
+    },
   ],
 })
 

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Nuxt/>
+    <Nuxt class="content"/>
     <TheNav/>
   </main>
 </template>
@@ -10,4 +10,11 @@
   margin: 0;
   padding: 0;
 }
+</style>
+
+<style lang="scss" scoped>
+.content {
+  width: 100%;
+  height: calc(100vh - 80px);
+} 
 </style>
