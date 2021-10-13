@@ -5,53 +5,91 @@
         <div class="button">
           <p @click="navigate(data.lastPage)">←</p>
           <p>→</p>
-          <img src="https://www.freepnglogos.com/uploads/logo-home-png/chimney-home-icon-transparent-1.png" alt="Home" @click="navigate('home')">
+          <img
+            src="https://www.freepnglogos.com/uploads/logo-home-png/chimney-home-icon-transparent-1.png"
+            alt="Home"
+            @click="navigate('home')"
+          />
         </div>
-        <div class="url">
+        <div id="url" class="url">
           <p v-if="data.page === 'home'" class="homeText">{{ data.page }}</p>
           <p v-else>{{ data.page }}</p>
         </div>
-        <img src="https://icones.pro/wp-content/uploads/2021/03/icone-de-configuration-noire.png" alt="Home" class="setting">
+        <img
+          src="https://icones.pro/wp-content/uploads/2021/03/icone-de-configuration-noire.png"
+          alt="Home"
+          class="setting"
+        />
       </div>
     </div>
 
     <div v-if="data.page === 'home'" class="home">
       <div class="home-item" @click="navigate('google.com')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+          alt="Google"
+        />
         <p>Google</p>
       </div>
       <div class="home-item" @click="navigate('google.com')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+          alt="Google"
+        />
+        <p>Admin</p>
+      </div>
+      <div class="home-item" @click="navigate('google.com')">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+          alt="Google"
+        />
+        <p>Journal</p>
+      </div>
+      <div class="home-item" @click="navigate('google.com')">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+          alt="Google"
+        />
         <p>Google</p>
       </div>
       <div class="home-item" @click="navigate('google.com')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
-        <p>Google</p>
-      </div>
-      <div class="home-item" @click="navigate('google.com')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
-        <p>Google</p>
-      </div>
-      <div class="home-item" @click="navigate('google.com')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+          alt="Google"
+        />
         <p>Google</p>
       </div>
     </div>
-    <iframe v-if="data.page === 'google.com'" width="100%" height="100%" src="https://www.google.com/webhp?igu=1"></iframe>
+    <iframe
+      v-if="data.page === 'google.com'"
+      width="100%"
+      height="100%"
+      src="https://www.google.com/webhp?igu=1"
+    ></iframe>
   </div>
 </template>
 
 <script>
 export default {
   props: ['data'],
+  data() {
+    return {
+      animate: true,
+    }
+  },
   methods: {
-    navigate(destination){
+    navigate(destination) {
+      const element = document.getElementById('url');
+      element.classList.add('animate')
+      setTimeout(function(){
+        element.classList.remove('animate');
+      }, 2000)
       const data = {
         page: destination,
         lastPage: this.data.page,
       }
-      const params = { id: this.data.id, newItem: data };
-      this.$store.commit('setContent', params);
+      const params = { id: this.data.id, newItem: data }
+      this.$store.commit('setContent', params)
     },
   },
 }
@@ -85,7 +123,7 @@ export default {
         border-radius: 50%;
         padding: 5px;
         margin-right: 10px;
-        &:first-child{
+        &:first-child {
           cursor: pointer;
         }
       }
@@ -103,6 +141,22 @@ export default {
         text-transform: capitalize;
       }
     }
+    .animate {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      &::after {
+        content: ' ';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        z-index: -1;
+        background: rgb(116, 116, 224);
+        animation: slide 2s linear 1;
+      }
+    }
     .setting {
       height: 30px;
       margin-left: auto;
@@ -114,7 +168,7 @@ export default {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     &-item {
       img {
         height: 40px;
@@ -122,7 +176,7 @@ export default {
         border-radius: 50%;
         background: rgb(255, 255, 255);
         cursor: pointer;
-      } 
+      }
       margin: 0 10px;
       p {
         margin-top: 4px;
@@ -133,11 +187,42 @@ export default {
   }
 
   iframe {
-    flex-grow: 1; 
-    border: none; 
-    margin: 0; 
+    flex-grow: 1;
+    border: none;
+    margin: 0;
     padding: 0;
     border-radius: 0 0 8px 8px;
+  }
+}
+
+@keyframes slide {
+  from {
+    width: 0;
+    left: 0%;
+  }
+  1% {
+    left: 0%;
+  }
+  20% {
+    width: 20%;
+  }
+  40% {
+    width: 30%;
+  }
+  60% {
+    width: 30%;
+  }
+  70% {
+    width: 50%;
+  }
+  90% {
+    width: 50%;
+  }
+  99% {
+    left: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
 </style>

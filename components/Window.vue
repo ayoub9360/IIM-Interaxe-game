@@ -1,7 +1,8 @@
 <template>
   <main>
     <div class="window">
-      <div class="nav">
+      <div class="nav" :class="{note: data.id === 'note' ? true : false}">
+        <p class="bar">{{ data.id }}</p>
         <div class="low" @click="hideWindow"></div>
         <div class="size"></div>
         <div class="close" @click="closeWindow"></div>
@@ -9,6 +10,7 @@
       <PageEmail v-if="data.id === 'email'" :data="data"/>
       <PageInternet v-if="data.id === 'internet'" :data="data"/>
       <PageTerminal v-if="data.id === 'terminal'" :data="data"/>
+      <PageNote v-if="data.id === 'note'" :data="data"/>
     </div>
   </main>
 </template>
@@ -51,6 +53,17 @@ export default {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    &.note {
+      background: #F8D558;
+      .bar {
+        color: #2e2e2e;
+      }
+    }
+    .bar {
+      text-transform: capitalize;
+      color: white;
+      margin: 0 auto 0 20px
+    }
     .close {
       margin: 0 10px 0 0;
       background: red;

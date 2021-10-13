@@ -25,7 +25,7 @@
         @click="openWindow(item.id)"
       >
         <img :src="item.logo" :alt="item.id" />
-        <p>Test</p>
+        <p> {{ item.id }} </p>
       </div>
     </div>
   </div>
@@ -82,6 +82,7 @@ export default {
       align-items: center;
       p {
         padding: 0 10px;
+        text-transform: capitalize;
       }
       &:first-child {
         border-radius: 0 8px 0 0;
