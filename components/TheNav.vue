@@ -63,7 +63,7 @@ export default {
 <style lang="scss" scoped>
 .nav {
   background: #d1d1d1;
-  height: 80px;
+  height: 50px;
   position: relative;
   display: flex;
   align-items: center;
@@ -98,16 +98,17 @@ export default {
     cursor: pointer;
     margin-right: 10px;
     img {
-      width: 60px;
+      height: 35px;
     }
   }
   .home {
     display: flex;
     align-items: center;
-    height: 60px;
-    width: 60px;
     border-radius: 50%;
     margin-right: 30px;
+    img {
+      height: 30px;
+    }
   }
 }
 </style>

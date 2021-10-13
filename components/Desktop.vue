@@ -46,8 +46,8 @@ export default {
     }
     .icon {
       margin: 10px;
-      height: 70px;
-      width: 70px;
+      height: 50px;
+      width: 50px;
       border-radius: 12px;
       top: 20px;
       left: 20px;
@@ -59,7 +59,7 @@ export default {
     }
     .window {
       position: absolute;
-      top: 50%;
+      top: 48%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 90%;

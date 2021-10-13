@@ -15,6 +15,6 @@
 <style lang="scss" scoped>
 .content {
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 50px);
 } 
 </style>
