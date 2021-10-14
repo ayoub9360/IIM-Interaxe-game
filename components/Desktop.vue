@@ -33,7 +33,7 @@ export default {
       }
       const params = { id: itemId, newItem: data };
       this.$store.commit('setContent', params);
-    }
+    },
   },
 }
 </script>

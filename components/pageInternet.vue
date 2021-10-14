@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
+  <div class="maain">
     <!-- Navigation -->
-    <div class="nav">
+    <div class="naav">
       <div class="container">
         <div class="button">
           <p @click="navigate(data.lastPage)">←</p>
@@ -59,13 +59,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main {
+.maain {
   height: calc(100% - 20px);
   width: 100%;
   border-radius: 0 0 8px 8px;
   display: flex;
   flex-direction: column;
-  .nav {
+  .naav {
     height: 50px;
     background: #d3d3d3;
     display: flex;
@@ -75,6 +75,7 @@ export default {
       width: 80%;
       display: flex;
       align-items: center;
+      padding: 10px 0;
     }
     .button {
       margin-right: 20px;

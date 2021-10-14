@@ -5,6 +5,28 @@ export const state = () => ({
       isVisible: false,
       isOpen: false,
       logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mail_%28iOS%29.svg/602px-Mail_%28iOS%29.svg.png',
+      email: [
+        {
+          id: 'discover',
+          from: 'The killer - escape',
+          object: "Je retiens ton ami en otage, ahahahahahah!!!!!!",
+          content: "Je retiens ton ami en otage, ahahahahahah!!!!!!",
+          avatarImage: 'https://i.pravatar.cc/35',
+          image: '/mail/16.jpeg',
+          isVisible: true,
+          isOpen: false,
+        },
+        {
+          id: 'Damien',
+          from: 'Damien FOUYR',
+          object: "Je retiens ton ami en otage, ahahahahahah!!!!!!",
+          content: "J'ai trouver quelque chose d'étrange sur un site...",
+          avatarImage: 'https://i.pravatar.cc/35',
+          image: '/mail/16.jpeg',
+          isVisible: true,
+          isOpen: true,
+        },
+      ],
     },
     {
       id: 'internet',
@@ -56,4 +78,9 @@ export const mutations = {
     const item = state.clue.find((item) => item.id === id)
     Object.assign(item, newItem)
   },
+  addMail(state, { newItem }){
+    const item = state.content.find((item) => item.id === 'email')
+    console.log(newItem)
+    item.email.push(newItem)
+  }
 }

@@ -6,7 +6,7 @@
       <p class="error"> {{ error }} </p>
       <div>
         <input v-model="password" type="text" >
-        <button type="submit">Se connecter</button>
+        <button type="submit" class="btn btn-secondary">Se connecter</button>
       </div>
       <p class="letter">___  ___  ___  ___  ___ ___</p>
       <p class="indice">15 - 18 - 16 - 1 - 19 - 16</p>

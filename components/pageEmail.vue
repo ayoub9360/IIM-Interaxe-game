@@ -26,11 +26,6 @@
                         :icon="['fas', 'envelope']"
                       />&nbsp;Inbox
                     </p>
-                    <small
-                      ><span class="badge rounded-pill bg-primary"
-                        >3</span
-                      ></small
-                    >
                   </div>
                 </a>
                 <a
@@ -97,212 +92,43 @@
               <h3>Inbox</h3>
             </div>
             <div class="list-group list-group-flush mt-6">
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1">
-                        <strong>The Killer - ScapeGame</strong>
-                      </h6>
-                      <small class="text-muted">5 mins</small>
+              <!-- ____ EMAIL ____ -->
+              <div v-for="(item, index) in data.email" :key="index">
+                <a
+                  v-if="item.isVisible"
+                  href="#"
+                  class="list-group-item list-group-item-action"
+                  style="
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                  "
+                  @click="setPreview(item)"
+                >
+                  <div class="row d-flex flex-wrap align-items-center">
+                    <div class="col-1 align-middle">
+                      <img
+                        :src="item.avatarImage"
+                        class="rounded-circle pr-4"
+                        alt="avatar"
+                        style="position: relative; left: -10px"
+                      />
                     </div>
-                    <small class="text-muted mb-1">
-                      Je retiens ton ami en otage, ahahahahahah!!!!!!
-                    </small>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1">
-                        <strong>List group item heading</strong>
-                      </h6>
-                      <small class="text-muted">1 hour</small>
+                    <div class="col-11">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">
+                          <strong v-if="!item.isOpen">{{ item.from }}</strong>
+                          <span v-else>{{ item.from }}</span>
+                        </h6>
+                        <small class="text-muted">5 mins</small>
+                      </div>
+                      <small class="text-muted mb-1">
+                        {{ item.content }}
+                      </small>
                     </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
                   </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1">
-                        <strong>List group item heading</strong>
-                      </h6>
-                      <small class="text-muted">1 hour</small>
-                    </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1 text-muted">List group item heading</h6>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1 text-muted">List group item heading</h6>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1 text-muted">List group item heading</h6>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1 text-muted">List group item heading</h6>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1 text-muted">List group item heading</h6>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1 text-muted">List group item heading</h6>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="row d-flex flex-wrap align-items-center">
-                  <div class="col-1 align-middle">
-                    <img
-                      src="https://i.pravatar.cc/35"
-                      class="rounded-circle"
-                      alt="avatar"
-                    />
-                  </div>
-                  <div class="col-11">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1 text-muted">List group item heading</h6>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <small class="text-muted mb-1">
-                      Some placeholder content in a paragraph.
-                    </small>
-                  </div>
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -325,19 +151,15 @@
             </button>
           </div>
           <div
+            v-if="preview"
             class="row d-flex flex-wrap align-items-center mb-2 border-bottom"
           >
             <div class="col-1 align-middle">
-              <img
-                src="https://i.pravatar.cc/40"
-                class="rounded-circle"
-                alt="avatar"
-              />
+              <img :src="avatar" class="rounded-circle" alt="avatar" />
             </div>
             <div class="col-11">
               <div class="d-flex w-100 justify-content-between">
-                <h6 class="mb-1">The Killer - ScapeGame</h6>
-                <small class="text-muted">3 days ago </small>
+                <h6 class="mb-1">{{ preview.from }}</h6>
               </div>
               <div class="float-end">
                 <span class="badge bg-dark mb-2"
@@ -350,30 +172,22 @@
                   ><font-awesome-icon :icon="['fas', 'bars']"
                 /></span>
               </div>
-              <small class="text-muted mb-1"> To: Damien FOUYR </small>
+              <small class="text-muted mb-1"> To: Me</small>
             </div>
           </div>
-          <div class="text-center">
+          <div v-if="preview" class="text-center">
             <div class="card-body">
               <h5 class="card-title">
-                Je retiens ton ami en otage, ahahahahahah!!!!!!
+                {{ preview.object }}
               </h5>
               <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                quis ultricies velit. Etiam quam nulla, placerat ut elit quis,
-                commodo sollicitudin ipsum. In facilisis facilisis dapibus.
-                Maecenas in gravida odio. In tincidunt mi sed dictum commodo.
+                {{ preview.content }}
               </p>
               <img
                 class="rounded mx-auto d-block img-thumbnail mb-3"
-                src="https://picsum.photos/300/300/?blur=6"
+                :src="preview.image"
                 alt=""
               />
-              <!-- <a href="#" class="btn btn-primary mb-2">Go somewhere</a> -->
-              <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                quis ultricies velit.
-              </p>
             </div>
           </div>
         </div>
@@ -385,15 +199,37 @@
 <script>
 export default {
   props: ['data'],
+  data() {
+    return {
+      avatar: 'https://i.pravatar.cc/35',
+      preview: null,
+      email: [],
+    }
+  },
+  methods: {
+    setPreview(mail) {
+      this.preview = mail
+    },
+  },
 }
 </script>
 
+<style lang="scss" scoped>
+p {
+  margin-bottom: 1rem;
+}
+</style>
 
 <style lang="scss">
-@import '@/node_modules/bootstrap/dist/css/bootstrap.css';
+@import '~/assets/bootstrap.css';
 .main {
   height: 100%;
+  min-height: 100%;
   width: 100%;
+  overflow: scroll;
   border-radius: 0 0 8px 8px;
+  .container-fluid {
+    min-height: 100%;
+  }
 }
 </style>
