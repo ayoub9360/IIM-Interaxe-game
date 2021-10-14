@@ -2,35 +2,7 @@
   <div class="home">
     <div class="home-item" @click="navigate('google.com')">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-        alt="Google"
-      />
-      <p>Google</p>
-    </div>
-    <div class="home-item" @click="navigate('google.com')">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-        alt="Google"
-      />
-      <p>Admin</p>
-    </div>
-    <div class="home-item" @click="navigate('google.com')">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-        alt="Google"
-      />
-      <p>Journal</p>
-    </div>
-    <div class="home-item" @click="navigate('google.com')">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-        alt="Google"
-      />
-      <p>Google</p>
-    </div>
-    <div class="home-item" @click="navigate('google.com')">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+        src="https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_1280.png"
         alt="Google"
       />
       <p>Google</p>
@@ -67,11 +39,12 @@ export default {
   align-items: center;
   &-item {
     img {
-      height: 40px;
-      padding: 20px;
+      height: 70px;
+      width: 70px;
       border-radius: 50%;
-      background: rgb(255, 255, 255);
       cursor: pointer;
+      display: block;
+      margin: auto;
     }
     margin: 0 10px;
     p {
