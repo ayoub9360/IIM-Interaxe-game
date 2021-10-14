@@ -58,7 +58,7 @@ export default {
 .window {
   height: 100%;
   width: 100%;
-  background: #e2e2e2;
+  background: white;
   border-radius: 8px;
   .nav {
     border-radius: 8px 8px 0 0;

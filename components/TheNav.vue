@@ -74,7 +74,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  background: #d1d1d1;
+  background: white;
   height: 50px;
   position: relative;
   display: flex;

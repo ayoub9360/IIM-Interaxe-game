@@ -42,7 +42,8 @@ export default {
   main {
     height: 100%;
     background-color: #1b1d1d;
-    background-image: linear-gradient(to right bottom, #9f4b7b, #934a84, #844b8d, #714d94, #594f9a, #4a5fab, #346fb9, #007ec5, #009eda, #00bee8, #00ddef, #5ffbf1);
+    background-image: url(https://res.allmacwallpaper.com/get/Retina-MacBook-Air-13-inch-wallpapers/waves-light-8k-2560x1600/23837-11.jpg);
+    background-size: cover;
     position: relative;
     .icon-list {
       display: flex;
