@@ -21,7 +21,7 @@ export const state = () => ({
           id: 'Damien',
           from: 'Damien FOUYR',
           object: "Il se passe des choses étranges ici...",
-          content: "J'ai trouver quelque chose d'étrange sur un site, mais l'image est flou. Je ne comprend pas",
+          content: "J'ai trouvé quelque chose d'étrange sur un site, mais l'image est flou. Je ne comprend pas",
           avatarImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBKl8PFoYK2s9_5FEy5iUtdtMWmK-HwWpysc1P5jDWSCU3eTE646mVo1gfXSk8_yg_GBM&usqp=CAU',
           image: '/flou.jpg',
           isVisible: true,
