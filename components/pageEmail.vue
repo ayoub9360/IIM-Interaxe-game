@@ -111,7 +111,7 @@
                         :src="item.avatarImage"
                         class="rounded-circle pr-4"
                         alt="avatar"
-                        style="position: relative; left: -10px"
+                        style="position: relative; left: -10px; max-width: 35px"
                       />
                     </div>
                     <div class="col-11">
@@ -122,7 +122,7 @@
                         <small class="text-muted">5 mins</small>
                       </div>
                       <small class="text-muted mb-1">
-                        {{ item.content }}
+                        {{ item.object }}
                       </small>
                     </div>
                   </div>
@@ -154,7 +154,7 @@
             class="row d-flex flex-wrap align-items-center mb-2 border-bottom"
           >
             <div class="col-1 align-middle">
-              <img :src="avatar" class="rounded-circle" alt="avatar" />
+              <img :src="preview.avatarImage" class="rounded-circle" alt="avatar" style="max-width: 35px" />
             </div>
             <div class="col-11">
               <div class="d-flex w-100 justify-content-between">
@@ -183,12 +183,12 @@
                 {{ preview.content }}
               </p>
               <div v-if="preview.download" class="download">
-                <a href="/Systeme_Vocal.zip" download rel="noopener noreferrer" target="_blank">
+                <a href="/system-vocal.zip" download rel="noopener noreferrer" target="_blank">
                   Download
                 </a>
               </div>
               <img
-                class="rounded mx-auto d-block img-thumbnail mb-3"
+                class="rounded mx-auto d-block img-thumbnail mb-3 img-preview"
                 :src="preview.image"
                 alt=""
               />
@@ -246,6 +246,9 @@ p {
       text-decoration: none;
       color: white;
     }
+  }
+  .img-preview {
+    max-width: 50%;
   }
 }
 </style>

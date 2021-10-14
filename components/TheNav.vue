@@ -30,7 +30,7 @@
     <img v-if="!muted" style="height: 20px; margin-left: auto" src="https://icons.iconarchive.com/icons/custom-icon-design/mono-general-4/512/sound-icon.png" alt="sound" @click="sound">
     <img v-if="muted" style="height: 20px; margin-left: auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Mute_Icon.svg/1200px-Mute_Icon.svg.png" alt="sound" @click="sound">
     
-    <audio class="song" hidden="true" controls autoplay="true">
+    <audio class="song" hidden="true" loop="true" controls autoplay="true">
       <source src="/FBI.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>

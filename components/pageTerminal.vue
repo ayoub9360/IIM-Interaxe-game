@@ -100,11 +100,11 @@ export default {
       else if (this.command.toLowerCase() === 'clear') {
         this.terminal.length = 0
       }
-      else if (this.command.toLowerCase() === 'music stop') {
+      else if (this.command.toLowerCase() === 'stop music') {
         const vid = document.querySelector(".song")
         vid.muted = true;
       }
-      else if (this.command.toLowerCase() === 'music play') {
+      else if (this.command.toLowerCase() === 'play music') {
         const vid = document.querySelector(".song")
         vid.muted = false;
       }
