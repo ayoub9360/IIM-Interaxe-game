@@ -29,6 +29,8 @@
     <WebsiteGoogle v-if="data.page === 'google.com'" :data="data" />
     <WebsiteText v-if="data.page === 'accueil'" :data="data" />
     <WebsiteMap v-if="data.page === 'map'" :data="data" />
+    <WebsiteAlni v-if="data.page === 'alni'" :data="data" />
+    <WebsiteDiscover v-if="data.page === 'end'" :data="data" />
   </div>
 </template>
 

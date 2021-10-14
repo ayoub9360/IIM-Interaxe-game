@@ -23,7 +23,7 @@ export default {
     },
     clue() {
       return this.$store.getters.getClue
-    }
+    },
   },
   methods: {
     openWindow(itemId){

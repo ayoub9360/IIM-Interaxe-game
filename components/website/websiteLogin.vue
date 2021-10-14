@@ -78,8 +78,9 @@ export default {
       margin-left: 3px;
     }
     .indice {
-      margin-top: 8px;
-      text-align: center;
+      margin-top: -10px;
+      margin-left: 5px;
+      text-align: left;
     }
   }
 </style>

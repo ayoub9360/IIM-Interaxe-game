@@ -117,8 +117,7 @@
                     <div class="col-11">
                       <div class="d-flex w-100 justify-content-between">
                         <h6 class="mb-1">
-                          <strong v-if="!item.isOpen">{{ item.from }}</strong>
-                          <span v-else>{{ item.from }}</span>
+                          <span>{{ item.from }}</span>
                         </h6>
                         <small class="text-muted">5 mins</small>
                       </div>
@@ -183,6 +182,11 @@
               <p class="card-text">
                 {{ preview.content }}
               </p>
+              <div v-if="preview.download" class="download">
+                <a href="/Systeme_Vocal.zip" download rel="noopener noreferrer" target="_blank">
+                  Download
+                </a>
+              </div>
               <img
                 class="rounded mx-auto d-block img-thumbnail mb-3"
                 :src="preview.image"
@@ -224,12 +228,24 @@ p {
 @import '~/assets/bootstrap.css';
 .main {
   height: 100%;
-  min-height: 100%;
   width: 100%;
   overflow: scroll;
   border-radius: 0 0 8px 8px;
   .container-fluid {
     min-height: 100%;
+  }
+  .download {
+    padding: 5px 10px;
+    background: gray;
+    border-radius: 4px;
+    color: white;
+    width: max-content;
+    margin: auto;
+    margin-bottom: 5px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 }
 </style>

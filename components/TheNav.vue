@@ -7,7 +7,6 @@
         @click="openMenu"
       />
     </div>
-
     <div
       v-for="item in data"
       :key="item.id"
@@ -28,6 +27,13 @@
         <p> {{ item.id }} </p>
       </div>
     </div>
+    <img v-if="!muted" style="height: 20px; margin-left: auto" src="https://icons.iconarchive.com/icons/custom-icon-design/mono-general-4/512/sound-icon.png" alt="sound" @click="sound">
+    <img v-if="muted" style="height: 20px; margin-left: auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Mute_Icon.svg/1200px-Mute_Icon.svg.png" alt="sound" @click="sound">
+    
+    <audio class="song" hidden="true" controls autoplay="true">
+      <source src="/FBI.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </div>
 </template>
 
@@ -35,7 +41,8 @@
 export default {
   data() {
     return {
-      menu: false
+      menu: false,
+      muted: false
     }
   },
   computed: {
@@ -55,6 +62,11 @@ export default {
       }
       const params = { id: itemId, newItem: data };
       this.$store.commit('setContent', params);
+    },
+    sound() {
+      const vid = document.querySelector(".song");
+      vid.muted = !this.muted;
+      this.muted = !this.muted;
     }
   },
 }

@@ -15,6 +15,7 @@ export const state = () => ({
           image: '/mail/16.jpeg',
           isVisible: true,
           isOpen: false,
+          download: true,
         },
         {
           id: 'Damien',
@@ -33,7 +34,7 @@ export const state = () => ({
       isVisible: false,
       isOpen: false,
       logo: 'https://purepng.com/public/uploads/large/purepng.com-safari-iconsymbolsiconsapple-iosiosios-8-iconsios-8-7215225961106timx.png',
-      page: 'map',
+      page: 'home',
       lastPage: 'google.com',
     },
     {
@@ -47,7 +48,7 @@ export const state = () => ({
       isVisible: false,
       isOpen: false,
       logo: 'https://help.apple.com/assets/5FDCE7A064869015B86C4E71/5FDCE7A164869015B86C4E78/fr_FR/c34b1b0e87e731a83161d9bb21345afc.png',
-      note: "Je n'ai toujours pas retrouver Damien... Je dois commencer à mener l'enquete ! \nje vais noter toutes mes trouvailles ici !",
+      note: "Je n'ai toujours pas retrouvé Damien... Je dois commencer à mener l'enquête ! \nje vais noter toutes mes trouvailles ici !",
     },
   ],
   clue: [
@@ -80,7 +81,6 @@ export const mutations = {
   },
   addMail(state, { newItem }){
     const item = state.content.find((item) => item.id === 'email')
-    console.log(newItem)
     item.email.push(newItem)
   }
 }
