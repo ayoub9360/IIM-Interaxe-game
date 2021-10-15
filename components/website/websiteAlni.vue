@@ -51,7 +51,7 @@
         <td>1H15</td>
       </tr>
       <tr>
-        <td>VALLET</td>
+        <td>VALET</td>
         <td>PAUL</td>
         <td>18H55</td>
         <td>PIZZA</td>
@@ -74,7 +74,7 @@
       <tr>
         <td>ROSE</td>
         <td>MAELLE</td>
-        <td>18H40</td>
+        <td>18H30</td>
         <td>Cote de boeuf</td>
         <td>1H00</td>
       </tr>

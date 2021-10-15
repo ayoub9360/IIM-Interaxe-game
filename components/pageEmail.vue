@@ -119,7 +119,6 @@
                         <h6 class="mb-1">
                           <span>{{ item.from }}</span>
                         </h6>
-                        <small class="text-muted">5 mins</small>
                       </div>
                       <small class="text-muted mb-1">
                         {{ item.object }}

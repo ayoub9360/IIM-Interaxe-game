@@ -6,6 +6,9 @@
 </template>
 
 <style>
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
 *{
   margin: 0;
   padding: 0;
