@@ -1,6 +1,12 @@
 <template>
   <main>
-    <h1>Victoire</h1>
+    <video class="bg-video" autoplay loop>
+      <source src="~/assets/victoire.mp4" type="video/mp4">
+    </video>
+    <nuxt-link to="/"><h1>REJOUER</h1></nuxt-link>
+    <!-- <video class="bg-video" autoplay loop>
+      <source src="~/assets/defaite.mp4" type="video/mp4">
+    </video> -->
   </main>
 </template>
 
@@ -32,7 +38,7 @@ video {
 h1 {
   position: absolute;
   transform: translateX(-50%) translateY(-50%);
-  bottom: 50%;
+  bottom: 10%;
   left: 50%;
   background: white;
   padding: 5px 10px;
